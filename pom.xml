@@ -6,9 +6,9 @@
     <version>2.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>TestRail API Java Client</name>
+    <name>TestRail API Java Client - Log4J version changed to 2.x</name>
     <description>Java client for TestRail API</description>
-    <url>https://github.com/codepine/testrail-api-java-client</url>
+    <url>https://github.com/hsuraweera/testrail-api-java-client</url>
 
     <licenses>
         <license>
@@ -34,11 +34,19 @@
         </developer>
     </developers>
 
+<!--    <distributionManagement>-->
+<!--        <snapshotRepository>-->
+<!--            <id>ossrh</id>-->
+<!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
+
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
+        <repository>
+            <id>github</id>
+            <name>Updated the TR API Client log4j version</name>
+            <url>https://maven.pkg.github.com/hsuraweera/testrail-api-java-client</url>
+        </repository>
     </distributionManagement>
 
     <properties>
@@ -62,8 +70,8 @@
         <nexus.staging.maven.plugin.version>1.6.5</nexus.staging.maven.plugin.version>
 
         <!-- misc -->
-        <src.dir>target/generated-sources/delombok</src.dir>
-        <tst.dir>target/generated-test-sources/delombok</tst.dir>
+<!--        <src.dir>target/generated-sources/delombok</src.dir>-->
+<!--        <tst.dir>target/generated-test-sources/delombok</tst.dir>-->
     </properties>
 
     <dependencies>
@@ -204,35 +212,35 @@
                 <artifactId>lombok-maven-plugin</artifactId>
                 <version>${lombok.plugin.version}</version>
                 <executions>
-                    <execution>
-                        <id>delombok</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>delombok</goal>
-                        </goals>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                            <formatPreferences>
-                                <javaLangAsFQN>skip</javaLangAsFQN>
-                            </formatPreferences>
-                            <addOutputDirectory>false</addOutputDirectory>
-                            <sourceDirectory>src/main/java</sourceDirectory>
-                            <verbose>true</verbose>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>test-delombok</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>testDelombok</goal>
-                        </goals>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                            <verbose>true</verbose>
-                            <addOutputDirectory>false</addOutputDirectory>
-                            <sourceDirectory>src/test/java</sourceDirectory>
-                        </configuration>
-                    </execution>
+<!--                    <execution>-->
+<!--                        <id>delombok</id>-->
+<!--                        <phase>generate-sources</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>delombok</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <encoding>UTF-8</encoding>-->
+<!--                            <formatPreferences>-->
+<!--                                <javaLangAsFQN>skip</javaLangAsFQN>-->
+<!--                            </formatPreferences>-->
+<!--                            <addOutputDirectory>false</addOutputDirectory>-->
+<!--                            <sourceDirectory>src/main/java</sourceDirectory>-->
+<!--                            <verbose>true</verbose>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>test-delombok</id>-->
+<!--                        <phase>generate-test-sources</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>testDelombok</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <encoding>UTF-8</encoding>-->
+<!--                            <verbose>true</verbose>-->
+<!--                            <addOutputDirectory>false</addOutputDirectory>-->
+<!--                            <sourceDirectory>src/test/java</sourceDirectory>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
                 </executions>
             </plugin>
             <plugin>
