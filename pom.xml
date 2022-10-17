@@ -47,7 +47,7 @@
         <lombok.version>1.16.2</lombok.version>
         <jackson.version>2.3.1</jackson.version>
         <guava.version>21.0</guava.version>
-        <log4j.version>1.2.17</log4j.version>
+        <log4j.version>2.19.0</log4j.version>
         <junit.version>4.11</junit.version>
         <mockito.version>1.9.5</mockito.version>
 
@@ -84,8 +84,8 @@
             <version>${guava.version}</version>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
             <version>${log4j.version}</version>
         </dependency>
         <dependency>
